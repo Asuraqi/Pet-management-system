@@ -1,0 +1,134 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+<hibernate-mapping package="cn.edu.zucc.pet.model">  
+    <!-- 标识一个类的xml映射,name为类名,table为表名 -->  
+    <class name="cn.edu.zucc.pet.model.BeanCommodity" table="commodity_service_information_table">
+        <id name="category_id" type="int">
+            <column name="category_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="commodity_id" type="int">
+            <column name="commodity_id" />
+        </property>
+        <property name="commodity_name" type="java.lang.String">
+            <column name="commodity_name" />
+        </property>
+        <property name="category_name" type="java.lang.String">
+            <column name="category_name" />
+        </property>
+        <property name="commodity_brand" type="java.lang.String">
+            <column name="commodity_brand" />
+        </property>
+        <property name="commodity_price" type="float">
+            <column name="commodity_price" />
+        </property>
+        <property name="commodity_barcode" type="int">
+            <column name="commodity_barcode" />
+        </property>
+    </class>
+    <class name="cn.edu.zucc.pet.model.BeanCommodityCategory" table="commodity_category_table">
+        <id name="category_id" type="int">
+            <column name="category_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="category_name" type="java.lang.String">
+            <column name="category_name" />
+        </property>
+        <property name="category_describe" type="java.lang.String">
+            <column name="category_describe" />
+        </property>
+    </class>
+    <class name="cn.edu.zucc.pet.model.BeanOrder" table="order_information">
+        <id name="order_id" type="int">
+            <column name="order_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="user_id" type="int">
+            <column name="user_id" />
+        </property>
+        <property name="commodity_id" type="int">
+            <column name="commodity_id" />
+        </property>
+        <property name="number" type="int">
+            <column name="number" />
+        </property>
+        <property name="sale" type="float">
+            <column name="sale" />
+        </property>
+        <property name="deliver_condition" type="java.lang.String">
+            <column name="deliver_condition" />
+        </property>
+        <property name="staff_id" type="int">
+            <column name="staff_id" />
+        </property>
+    </class>
+     <class name="cn.edu.zucc.pet.model.BeanPet" table="pet_information_table">
+        <id name="pet_id" type="int">
+            <column name="pet_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="user_id" type="int">
+            <column name="user_id" />
+        </property>
+        <property name="pet_nickname" type="java.lang.String">
+            <column name="pet_nickname" />
+        </property>
+        <property name="pet_category" type="java.lang.String">
+            <column name="pet_category" />
+        </property>
+        <property name="pet_photo" type="java.sql.Blob">
+            <column name="pet_photo" />
+        </property>
+    </class>
+    <class name="cn.edu.zucc.pet.model.BeanServiceOrder" table="service_order_information">
+    
+      <id name="service_id" type="java.lang.String">
+      <column name="service_id" />
+         <generator class="assigned"/>
+      </id>
+        <property name="pet_id" type="int">
+            <column name="pet_id" />
+        </property>
+        <property name="commodity_id" type="int">
+            <column name="commodity_id" />
+        </property>
+        <property name="staff_id" type="int">
+            <column name="staff_id" />
+        </property>
+        <property name="service_time" type="timestamp">
+            <column name="service_time" />
+        </property>
+        <property name="service_finish_time" type="timestamp">
+            <column name="service_finish_time" />
+        </property>
+    </class>
+     <class name="cn.edu.zucc.pet.model.BeanStaff" table="staff_information_table">
+        <id name="staff_id" type="int">
+            <column name="staff_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="staff_name" type="java.lang.String">
+            <column name="staff_name" />
+        </property>
+        <property name="staff_rank" type="java.lang.String">
+            <column name="staff_rank" />
+        </property>
+        <property name="staff_pwd" type="java.lang.String">
+            <column name="staff_pwd" />
+        </property>
+    </class>
+     <class name="cn.edu.zucc.pet.model.BeanUser" table="user_information_table">
+        <id name="user_id" type="int">
+            <column name="user_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="user_name" type="java.lang.String">
+            <column name="user_name" />
+        </property>
+        <property name="user_phone_number" type="java.lang.String">
+            <column name="user_phone_number" />
+        </property>
+        <property name="user_webmail" type="java.lang.String">
+            <column name="user_webmail" />
+        </property>
+    </class>
+</hibernate-mapping>  
